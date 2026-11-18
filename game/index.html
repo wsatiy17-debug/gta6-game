@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Bay — Open-World Crime Game</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<canvas id="game-canvas"></canvas>
+
+<div id="hud" class="hidden">
+  <div id="hud-top-left">
+    <div id="hud-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+    <div id="health-bar"><div id="health-fill"></div></div>
+    <div id="money">$250</div>
+  </div>
+  <div id="hud-top-right">
+    <canvas id="minimap" width="190" height="190"></canvas>
+    <div id="speed" class="hidden"><span id="speed-value">0</span> <span>km/h</span></div>
+  </div>
+  <div id="evade">EVADING…</div>
+  <div id="arrest" class="hidden">
+    <div id="arrest-label">BEING ARRESTED — RUN!</div>
+    <div id="arrest-bar"><div id="arrest-fill"></div></div>
+  </div>
+  <div id="toast"></div>
+  <div id="objective">Welcome to Neon Bay</div>
+  <div id="hint">WASD move / drive · E enter car · Space handbrake<br>Click shoot · F punch · H horn · M mute · P pause</div>
+</div>
+
+<div id="menu" class="overlay">
+  <h1>NEON BAY</h1>
+  <div class="tagline">SUN · SPEED · TROUBLE</div>
+  <p class="story">Kai Mercer just rolled into Neon Bay with $250 and a fast right foot.
+    Vera Solano, who runs the Sunset Bar, has work for a driver who doesn't ask
+    questions. Steal cars, outrun the PD, run five jobs — and own the city.</p>
+  <div class="controls">
+    <b>WASD / arrows</b> move &amp; drive &nbsp;·&nbsp; <b>Shift</b> sprint &nbsp;·&nbsp; <b>E</b> enter / exit car<br>
+    <b>Space</b> handbrake &nbsp;·&nbsp; <b>Mouse + click</b> aim &amp; shoot &nbsp;·&nbsp; <b>F</b> punch<br>
+    <b>H</b> horn &nbsp;·&nbsp; <b>M</b> mute &nbsp;·&nbsp; <b>P / Esc</b> pause
+  </div>
+  <button id="menu-start" type="button">START ENGINE</button>
+  <button id="menu-continue" type="button" class="secondary hidden">CONTINUE</button>
+</div>
+
+<div id="pause" class="overlay hidden">
+  <h2>PAUSED</h2>
+  <div class="menu-col">
+    <button id="pause-resume" type="button">RESUME</button>
+    <button id="pause-mute" type="button" class="secondary">Mute (M)</button>
+    <button id="pause-restart" type="button" class="secondary">RESTART</button>
+    <button id="pause-menu-btn" type="button" class="secondary">MAIN MENU</button>
+  </div>
+</div>
+
+<div id="brief" class="overlay hidden">
+  <h2 id="brief-title">Mission</h2>
+  <p id="brief-text"></p>
+  <div id="brief-pay"></div>
+  <button id="brief-go" type="button">GO</button>
+</div>
+
+<div id="end" class="overlay hidden">
+  <h2 id="end-title">WASTED</h2>
+  <p id="end-text"></p>
+  <button id="end-retry" type="button">GET BACK OUT THERE (R)</button>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
